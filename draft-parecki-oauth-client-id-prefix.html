@@ -1050,7 +1050,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Parecki, et al.</td>
-<td class="center">Expires 22 September 2025</td>
+<td class="center">Expires 25 September 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1063,12 +1063,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-parecki-oauth-client-id-prefix-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-03-21" class="published">21 March 2025</time>
+<time datetime="2025-03-24" class="published">24 March 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-09-22">22 September 2025</time></dd>
+<dd class="expires"><time datetime="2025-09-25">25 September 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1126,7 +1126,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 22 September 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 25 September 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1262,8 +1262,8 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 </div>
 <p id="section-3.1-3">Here, <code>&lt;client_id_prefix&gt;</code> is the Client Identifier Prefix and <code>&lt;orig_client_id&gt;</code> is an identifier for the Client within the namespace of that prefix. See <a href="#client_identifier_prefixes" class="auto internal xref">Section 3.3</a> for Client Identifier Prefixes defined by this specification.<a href="#section-3.1-3" class="pilcrow">¶</a></p>
 <p id="section-3.1-4">Authorization Servers <span class="bcp14">MUST</span> use the presence of a <code>:</code> (colon) character and the content preceding it to determine whether a Client Identifier Prefix is used. If a <code>:</code> character is present, and the content preceding it is a recognized and supported Client Identifier Prefix value, the Authorization Server <span class="bcp14">MUST</span> interpret the Client Identifier according to the given Client Identifier Prefix. The Client Identifier Prefix is defined as the string before the (first) <code>:</code> character. If the Authorization Server does not support the Client Identifier Prefix, the Authorization Server <span class="bcp14">MUST</span> refuse the request.<a href="#section-3.1-4" class="pilcrow">¶</a></p>
-<p id="section-3.1-5">For example, an Authorization Request might contain <code>client_id=client_attestation:example-client</code> to indicate that the <code>client_attestation</code> Client Identifier Prefix is to be used and that within this prefix, the Client can be identified by the string <code>example-client</code>. The presentation would contain the full <code>client_attestation:example-client</code> string as the audience (intended receiver) and the same full string would be used as the Client Identifier anywhere in the OAuth flow.<a href="#section-3.1-5" class="pilcrow">¶</a></p>
-<p id="section-3.1-6">Note that the Client needs to determine which Client Identifier Prefixes the Authorization Server supports prior to sending the Authorization Request in order to choose a supported prefix.<a href="#section-3.1-6" class="pilcrow">¶</a></p>
+<p id="section-3.1-5">For example, an Authorization Request might contain <code>client_id=client_attestation:example-client</code> to indicate that the <code>client_attestation</code> Client Identifier Prefix is to be used and that within this prefix, the Client can be identified by the string <code>example-client</code>.<a href="#section-3.1-5" class="pilcrow">¶</a></p>
+<p id="section-3.1-6">Note that the Client may need to determine which Client Identifier Prefixes the Authorization Server supports prior to sending the Authorization Request in order to ensure the client's preferred prefix is supported.<a href="#section-3.1-6" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="fallback-for-unrecognized-client-id-prefixes">
@@ -1281,7 +1281,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
           <h4 id="name-example">
 <a href="#section-3.2.1" class="section-number selfRef">3.2.1. </a><a href="#name-example" class="section-name selfRef">Example</a>
           </h4>
-<p id="section-3.2.1-1">Deployments that use <code>https</code> URLs as client IDs and that have only one way to resolve client metadata from the URL, <span class="bcp14">MAY</span> use full https URL as the client ID. If there is only one way to resolve client metadata then there is no ambiguity in which metadata retrieval method to use, and are not susceptible to client identifier mixup attacks as described in <a href="#client-id-mixups" class="auto internal xref">Section 6.1</a>.<a href="#section-3.2.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.2.1-1">Deployments that use <code>https</code> URLs as client IDs and that have only one way to resolve client metadata from the URL, <span class="bcp14">MAY</span> use only the full https URL as the client ID. If there is only one way to resolve client metadata then there is no ambiguity in which metadata retrieval method to use, and are not susceptible to client identifier mixup attacks as described in <a href="#client-id-mixups" class="auto internal xref">Section 6.1</a>.<a href="#section-3.2.1-1" class="pilcrow">¶</a></p>
 <p id="section-3.2.1-2">For example, an authorization server using only the Client ID Metadata Document <span>[<a href="#I-D.draft-parecki-oauth-client-id-metadata-document" class="cite xref">I-D.draft-parecki-oauth-client-id-metadata-document</a>]</span> method to retrieve client metadata <span class="bcp14">MAY</span> accept client IDs such as:<a href="#section-3.2.1-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-3.2.1-3">
 <pre>
@@ -1315,22 +1315,10 @@ GET /authorize?
             <p id="section-3.3-2.1.1"><code>redirect_uri</code>: This value indicates that the Client Identifier (without the prefix <code>redirect_uri:</code>) is the Client's Redirect URI (or Response URI when Response Mode <code>direct_post</code> is used). The Authorization Request <span class="bcp14">MUST NOT</span> be signed. The Client <span class="bcp14">MAY</span> omit the <code>redirect_uri</code> Authorization Request parameter. Example Client Identifier: <code>redirect_uri:https%3A%2F%2Fclient.example.org%2Fcb</code>.<a href="#section-3.3-2.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-3.3-2.2">
-            <p id="section-3.3-2.2.1"><code>openid_federation</code>: This value indicates that the Client Identifier is an Entity Identifier defined in OpenID Federation <span>[<a href="#OpenID.Federation" class="cite xref">OpenID.Federation</a>]</span>. Processing rules given in <span>[<a href="#OpenID.Federation" class="cite xref">OpenID.Federation</a>]</span> <span class="bcp14">MUST</span> be followed. Automatic Registration as defined in <span>[<a href="#OpenID.Federation" class="cite xref">OpenID.Federation</a>]</span> <span class="bcp14">MUST</span> be used. The Authorization Request <span class="bcp14">MAY</span> also contain a <code>trust_chain</code> parameter. The final Client metadata is obtained from the Trust Chain after applying the policies, according to <span>[<a href="#OpenID.Federation" class="cite xref">OpenID.Federation</a>]</span>. Example Client Identifier: <code>federation:https://federation-client.example.com</code>.<a href="#section-3.3-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-3.3-2.2.1"><code>client_id_metadata_document</code>: This value indicates that the Client Identifer (without the prefix <code>client_id_metadata_document:</code>) is the client's Client ID Metadata Document <span>[<a href="#I-D.draft-parecki-oauth-client-id-metadata-document" class="cite xref">I-D.draft-parecki-oauth-client-id-metadata-document</a>]</span>.<a href="#section-3.3-2.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-3.3-2.3">
-            <p id="section-3.3-2.3.1"><code>decentralized-identifier</code>: This value indicates that the Client Identifier is a DID defined in <span>[<a href="#DID-Core" class="cite xref">DID-Core</a>]</span>. The request <span class="bcp14">MUST</span> be signed with a private key associated with the DID. A public key to verify the signature <span class="bcp14">MUST</span> be obtained from the <code>verificationMethod</code> property of a DID Document. Since DID Document may include multiple public keys, a particular public key used to sign the request in question <span class="bcp14">MUST</span> be identified by the <code>kid</code> in the JOSE Header. To obtain the DID Document, the Authorization Server <span class="bcp14">MUST</span> use DID Resolution defined by the DID method used by the Client. Example Client Identifier: <code>did:example:123#1</code>.<a href="#section-3.3-2.3.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-3.3-2.4">
-            <p id="section-3.3-2.4.1"><code>client_attestation</code>: This Client Identifier Prefix allows the Client to authenticate using a JWT that is bound to a certain public key as defined in (OpenID4VP: Client Attestation). When the Client Identifier Prefix is <code>client_attestation</code>, the Client Identifier <span class="bcp14">MUST</span> equal the <code>sub</code> claim value in the Client attestation JWT. The request <span class="bcp14">MUST</span> be signed with the private key corresponding to the public key in the <code>cnf</code> claim in the Client attestation JWT. This serves as proof of possesion of this key. The Client attestation JWT <span class="bcp14">MUST</span> be added to the <code>jwt</code> JOSE Header of the request object (see (OpenID4VP: Client Attestation)). The Authorization Server <span class="bcp14">MUST</span> validate the signature on the Client attestation JWT. The <code>iss</code> claim value of the Client Attestation JWT <span class="bcp14">MUST</span> identify a party the Authorization Server trusts for issuing Client Attestation JWTs. If the Authorization Server cannot establish trust, it <span class="bcp14">MUST</span> refuse the request. If the issuer of the Client Attestation JWT adds a <code>redirect_uris</code> claim to the attestation, the Authorization Server <span class="bcp14">MUST</span> ensure the <code>redirect_uri</code> request parameter value exactly matches one of the <code>redirect_uris</code> claim entries. Example Client Identifier: <code>client_attestation:client.example</code>.<a href="#section-3.3-2.4.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-3.3-2.5">
-            <p id="section-3.3-2.5.1"><code>x509_san_dns</code>: When the Client Identifier Prefix is <code>x509_san_dns</code>, the Client Identifier <span class="bcp14">MUST</span> be a DNS name and match a <code>dNSName</code> Subject Alternative Name (SAN) <span>[<a href="#RFC5280" class="cite xref">RFC5280</a>]</span> entry in the leaf certificate passed with the request. The request <span class="bcp14">MUST</span> be signed with the private key corresponding to the public key in the leaf X.509 certificate of the certificate chain added to the request in the <code>x5c</code> JOSE header <span>[<a href="#RFC7515" class="cite xref">RFC7515</a>]</span> of the signed request object. The Authorization Server <span class="bcp14">MUST</span> validate the signature and the trust chain of the X.509 certificate. If the Authorization Server can establish trust in the Client Identifier authenticated through the certificate, e.g. because the Client Identifier is contained in a list of trusted Client Identifiers, it may allow the client to freely choose the <code>redirect_uri</code> value. If not, the FQDN of the <code>redirect_uri</code> value <span class="bcp14">MUST</span> match the Client Identifier without the prefix <code>x509_san_dns:</code>. Example Client Identifier: <code>x509_san_dns:client.example.org</code>.<a href="#section-3.3-2.5.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-3.3-2.6">
-            <p id="section-3.3-2.6.1"><code>x509_hash</code>: When the Client Identifier Prefix is <code>x509_hash</code>, the Client Identifier <span class="bcp14">MUST</span> be a hash and match the hash of the leaf certificate passed with the request. The request <span class="bcp14">MUST</span> be signed with the private key corresponding to the public key in the leaf X.509 certificate of the certificate chain added to the request in the <code>x5c</code> JOSE header parameter [@!RFC7515] of the signed request object. The value of <code>x509_hash</code> is the base64url encoded value of the SHA-256 hash of the DER-encoded X.509 certificate. The Wallet <span class="bcp14">MUST</span> validate the signature and the trust chain of the X.509 leaf certificate. All verifier metadata other than the public key <span class="bcp14">MUST</span> be obtained from the <code>client_metadata</code> parameter. Example Client Identifier: <code>x509_hash:Uvo3HtuIxuhC92rShpgqcT3YXwrqRxWEviRiA0OZszk</code><a href="#section-3.3-2.6.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-3.3-2.7">
-            <p id="section-3.3-2.7.1"><code>https</code>: This Client Identifier Prefix <span class="bcp14">MUST NOT</span> be registered.<a href="#section-3.3-2.7.1" class="pilcrow">¶</a></p>
+            <p id="section-3.3-2.3.1"><code>https</code>: This Client Identifier Prefix <span class="bcp14">MUST NOT</span> be registered.<a href="#section-3.3-2.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -1342,13 +1330,13 @@ GET /authorize?
       <h2 id="name-example-2">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-example-2" class="section-name selfRef">Example</a>
       </h2>
-<p id="section-4-1">The following is a non-normative example of an authorization request with the <code>redirect_uri</code> Client ID Prefix:<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-1">The following is a non-normative example of an authorization request with the <code>client_id_metadata_document</code> Client ID Prefix:<a href="#section-4-1" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-4-2">
 <pre>
 GET /authorize?
   response_type=code
-  &amp;client_id=redirect_uri:https%3A%2F%2Fclient.example.org%2Fcb
-  &amp;redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb
+  &amp;client_id=client_id_metadata_document:https%3A%2F%2Fclient.example.org%2Fmetadata.json
+  &amp;redirect_uri=https%3A%2F%2Fclient.example.org%2Fredirect
   &amp;code_challenge=GdE4nqBrwRxQfN2Y8fq3rrYk_kkpwg6tQ74J94-2nHw
   &amp;code_challenge_method=S256
   &amp;scope=write
