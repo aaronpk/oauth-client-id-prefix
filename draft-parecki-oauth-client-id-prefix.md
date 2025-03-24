@@ -114,9 +114,9 @@ Here, `<client_id_prefix>` is the Client Identifier Prefix and `<orig_client_id>
 
 Authorization Servers MUST use the presence of a `:` (colon) character and the content preceding it to determine whether a Client Identifier Prefix is used. If a `:` character is present, and the content preceding it is a recognized and supported Client Identifier Prefix value, the Authorization Server MUST interpret the Client Identifier according to the given Client Identifier Prefix. The Client Identifier Prefix is defined as the string before the (first) `:` character. If the Authorization Server does not support the Client Identifier Prefix, the Authorization Server MUST refuse the request.
 
-For example, an Authorization Request might contain `client_id=client_attestation:example-client` to indicate that the `client_attestation` Client Identifier Prefix is to be used and that within this prefix, the Client can be identified by the string `example-client`. The presentation would contain the full `client_attestation:example-client` string as the audience (intended receiver) and the same full string would be used as the Client Identifier anywhere in the OAuth flow.
+For example, an Authorization Request might contain `client_id=client_attestation:example-client` to indicate that the `client_attestation` Client Identifier Prefix is to be used and that within this prefix, the Client can be identified by the string `example-client`.
 
-Note that the Client needs to determine which Client Identifier Prefixes the Authorization Server supports prior to sending the Authorization Request in order to choose a supported prefix.
+Note that the Client may need to determine which Client Identifier Prefixes the Authorization Server supports prior to sending the Authorization Request in order to ensure the client's preferred prefix is supported.
 
 
 ## Fallback for Unrecognized Client ID Prefixes
@@ -134,7 +134,7 @@ From this definition, it follows that pre-registered clients MUST NOT contain a 
 
 ### Example
 
-Deployments that use `https` URLs as client IDs and that have only one way to resolve client metadata from the URL, MAY use full https URL as the client ID. If there is only one way to resolve client metadata then there is no ambiguity in which metadata retrieval method to use, and are not susceptible to client identifier mixup attacks as described in {{client-id-mixups}}.
+Deployments that use `https` URLs as client IDs and that have only one way to resolve client metadata from the URL, MAY use only the full https URL as the client ID. If there is only one way to resolve client metadata then there is no ambiguity in which metadata retrieval method to use, and are not susceptible to client identifier mixup attacks as described in {{client-id-mixups}}.
 
 For example, an authorization server using only the Client ID Metadata Document {{I-D.draft-parecki-oauth-client-id-metadata-document}} method to retrieve client metadata MAY accept client IDs such as:
 
@@ -157,27 +157,19 @@ This specification defines the following Client Identifier Prefixes, followed by
 
 * `redirect_uri`: This value indicates that the Client Identifier (without the prefix `redirect_uri:`) is the Client's Redirect URI (or Response URI when Response Mode `direct_post` is used). The Authorization Request MUST NOT be signed. The Client MAY omit the `redirect_uri` Authorization Request parameter. Example Client Identifier: `redirect_uri:https%3A%2F%2Fclient.example.org%2Fcb`.
 
-* `openid_federation`: This value indicates that the Client Identifier is an Entity Identifier defined in OpenID Federation {{OpenID.Federation}}. Processing rules given in {{OpenID.Federation}} MUST be followed. Automatic Registration as defined in {{OpenID.Federation}} MUST be used. The Authorization Request MAY also contain a `trust_chain` parameter. The final Client metadata is obtained from the Trust Chain after applying the policies, according to {{OpenID.Federation}}. Example Client Identifier: `federation:https://federation-client.example.com`.
-
-* `decentralized-identifier`: This value indicates that the Client Identifier is a DID defined in {{DID-Core}}. The request MUST be signed with a private key associated with the DID. A public key to verify the signature MUST be obtained from the `verificationMethod` property of a DID Document. Since DID Document may include multiple public keys, a particular public key used to sign the request in question MUST be identified by the `kid` in the JOSE Header. To obtain the DID Document, the Authorization Server MUST use DID Resolution defined by the DID method used by the Client. Example Client Identifier: `did:example:123#1`.
-
-* `client_attestation`: This Client Identifier Prefix allows the Client to authenticate using a JWT that is bound to a certain public key as defined in (OpenID4VP: Client Attestation). When the Client Identifier Prefix is `client_attestation`, the Client Identifier MUST equal the `sub` claim value in the Client attestation JWT. The request MUST be signed with the private key corresponding to the public key in the `cnf` claim in the Client attestation JWT. This serves as proof of possesion of this key. The Client attestation JWT MUST be added to the `jwt` JOSE Header of the request object (see (OpenID4VP: Client Attestation)). The Authorization Server MUST validate the signature on the Client attestation JWT. The `iss` claim value of the Client Attestation JWT MUST identify a party the Authorization Server trusts for issuing Client Attestation JWTs. If the Authorization Server cannot establish trust, it MUST refuse the request. If the issuer of the Client Attestation JWT adds a `redirect_uris` claim to the attestation, the Authorization Server MUST ensure the `redirect_uri` request parameter value exactly matches one of the `redirect_uris` claim entries. Example Client Identifier: `client_attestation:client.example`.
-
-* `x509_san_dns`: When the Client Identifier Prefix is `x509_san_dns`, the Client Identifier MUST be a DNS name and match a `dNSName` Subject Alternative Name (SAN) {{RFC5280}} entry in the leaf certificate passed with the request. The request MUST be signed with the private key corresponding to the public key in the leaf X.509 certificate of the certificate chain added to the request in the `x5c` JOSE header {{RFC7515}} of the signed request object. The Authorization Server MUST validate the signature and the trust chain of the X.509 certificate. If the Authorization Server can establish trust in the Client Identifier authenticated through the certificate, e.g. because the Client Identifier is contained in a list of trusted Client Identifiers, it may allow the client to freely choose the `redirect_uri` value. If not, the FQDN of the `redirect_uri` value MUST match the Client Identifier without the prefix `x509_san_dns:`. Example Client Identifier: `x509_san_dns:client.example.org`.
-
-* `x509_hash`: When the Client Identifier Prefix is `x509_hash`, the Client Identifier MUST be a hash and match the hash of the leaf certificate passed with the request. The request MUST be signed with the private key corresponding to the public key in the leaf X.509 certificate of the certificate chain added to the request in the `x5c` JOSE header parameter [@!RFC7515] of the signed request object. The value of `x509_hash` is the base64url encoded value of the SHA-256 hash of the DER-encoded X.509 certificate. The Wallet MUST validate the signature and the trust chain of the X.509 leaf certificate. All verifier metadata other than the public key MUST be obtained from the `client_metadata` parameter. Example Client Identifier: `x509_hash:Uvo3HtuIxuhC92rShpgqcT3YXwrqRxWEviRiA0OZszk`
+* `client_id_metadata_document`: This value indicates that the Client Identifer (without the prefix `client_id_metadata_document:`) is the client's Client ID Metadata Document {{I-D.draft-parecki-oauth-client-id-metadata-document}}.
 
 * `https`: This Client Identifier Prefix MUST NOT be registered.
 
 
 # Example
 
-The following is a non-normative example of an authorization request with the `redirect_uri` Client ID Prefix:
+The following is a non-normative example of an authorization request with the `client_id_metadata_document` Client ID Prefix:
 
     GET /authorize?
       response_type=code
-      &client_id=redirect_uri:https%3A%2F%2Fclient.example.org%2Fcb
-      &redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb
+      &client_id=client_id_metadata_document:https%3A%2F%2Fclient.example.org%2Fmetadata.json
+      &redirect_uri=https%3A%2F%2Fclient.example.org%2Fredirect
       &code_challenge=GdE4nqBrwRxQfN2Y8fq3rrYk_kkpwg6tQ74J94-2nHw
       &code_challenge_method=S256
       &scope=write
