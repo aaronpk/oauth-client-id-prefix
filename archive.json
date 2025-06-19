@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-17T02:01:18.189353+00:00",
+  "timestamp": "2025-06-19T02:01:21.605299+00:00",
   "repo": "aaronpk/oauth-client-id-prefix",
   "labels": [
     {
@@ -49,7 +49,24 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 2,
+      "id": "I_kwDONKxLcc68G8_i",
+      "title": "Dedicated errors ?",
+      "url": "https://github.com/aaronpk/oauth-client-id-prefix/issues/2",
+      "state": "OPEN",
+      "author": "matthieusieben",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Should there be dedicated errors codes?\n- `client_id_prefix_unsupported`\n- `client_id_prefix_required`\n- `invalid_client_id`",
+      "createdAt": "2025-06-18T08:19:49Z",
+      "updatedAt": "2025-06-18T08:21:57Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
   "pulls": [
     {
       "number": 1,
