@@ -179,7 +179,7 @@ The following is a non-normative example of an authorization request with the `c
 Authorization servers that publish Authorization Server Metadata ({{RFC8414}}) MUST include the following properties to indicate support for client ID prefixes as described in this specification.
 
 `client_id_prefixes_supported`:
-: REQUIRED. A JSON array of strings indicating the clients ID prefixes supported by this authorization server.
+: REQUIRED. A JSON array of strings indicating the registered client ID prefixes supported by this authorization server.
 
 
 # Security Considerations
