@@ -196,7 +196,7 @@ Confusing Clients using a Client Identifier Prefix with those using none can lea
 
 The following authorization server metadata value is defined by this specification and (TBD) registered in the IANA "OAuth Authorization Server Metadata" registry established in OAuth 2.0 Authorization Server Metadata {{RFC8414}}.
 
-* Metadata Name: `client_id_prefixes_supported`:
+* Metadata Name: `client_id_prefixes_supported`
 * Metadata Description: A JSON array of strings indicating the client ID prefixes supported by the authorization server.
 * Change Controller: IETF
 * Specification Document: {{as-metadata}} of [[ this specification ]]
