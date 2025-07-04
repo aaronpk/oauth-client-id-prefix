@@ -5,9 +5,9 @@
 Web Authorization Protocol                                    A. Parecki
 Internet-Draft                                                      Okta
 Intended status: Informational                                   D. Fett
-Expires: 25 September 2025                                     J. Heenan
+Expires: 5 January 2026                                        J. Heenan
                                                                 Authlete
-                                                           24 March 2025
+                                                             4 July 2025
 
 
                        OAuth 2.0 Client ID Prefix
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 September 2025.
+   This Internet-Draft will expire on 5 January 2026.
 
 Copyright Notice
 
@@ -258,8 +258,8 @@ GET /authorize?
    for client ID prefixes as described in this specification.
 
    client_id_prefixes_supported:  REQUIRED.  A JSON array of strings
-      indicating the clients ID prefixes supported by this authorization
-      server.
+      indicating the registered client ID prefixes supported by this
+      authorization server.
 
 6.  Security Considerations
 
