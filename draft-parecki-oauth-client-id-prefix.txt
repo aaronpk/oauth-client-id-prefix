@@ -282,7 +282,7 @@ GET /authorize?
    Server Metadata" registry established in OAuth 2.0 Authorization
    Server Metadata [RFC8414].
 
-   *  Metadata Name: client_id_prefixes_supported:
+   *  Metadata Name: client_id_prefixes_supported
 
    *  Metadata Description: A JSON array of strings indicating the
       client ID prefixes supported by the authorization server.
