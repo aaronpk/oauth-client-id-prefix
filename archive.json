@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-19T02:01:21.605299+00:00",
+  "timestamp": "2025-07-06T02:10:59.669392+00:00",
   "repo": "aaronpk/oauth-client-id-prefix",
   "labels": [
     {
@@ -65,6 +65,46 @@
       "updatedAt": "2025-06-18T08:21:57Z",
       "closedAt": null,
       "comments": []
+    },
+    {
+      "number": 3,
+      "id": "I_kwDONKxLcc6-4j9W",
+      "title": "Create an IANA registry for registering client id prefix into",
+      "url": "https://github.com/aaronpk/oauth-client-id-prefix/issues/3",
+      "state": "OPEN",
+      "author": "jogu",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "There needs to be an official list so an IANA registry makes sense I think.",
+      "createdAt": "2025-07-04T12:08:05Z",
+      "updatedAt": "2025-07-04T12:08:05Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 4,
+      "id": "I_kwDONKxLcc6-4pt8",
+      "title": "`https` should not be listed in the `client_id_prefixes_supported`",
+      "url": "https://github.com/aaronpk/oauth-client-id-prefix/issues/4",
+      "state": "CLOSED",
+      "author": "danielfett",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Proposal is to add wording saying that only \"registered\" client id prefixes should be listed in the OAuth metadata.",
+      "createdAt": "2025-07-04T12:15:10Z",
+      "updatedAt": "2025-07-04T12:20:45Z",
+      "closedAt": "2025-07-04T12:20:45Z",
+      "comments": [
+        {
+          "author": "danielfett",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Fixed in https://github.com/aaronpk/oauth-client-id-prefix/commit/1d1f012f19d4e8af431752af93a3bdcc47d1df3a",
+          "createdAt": "2025-07-04T12:20:45Z",
+          "updatedAt": "2025-07-04T12:20:45Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -91,6 +131,34 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 5,
+      "id": "PR_kwDONKxLcc6db0u-",
+      "title": "Remove extra colon",
+      "url": "https://github.com/aaronpk/oauth-client-id-prefix/pull/5",
+      "state": "MERGED",
+      "author": "danielfett",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-07-04T12:16:52Z",
+      "updatedAt": "2025-07-04T12:32:52Z",
+      "baseRepository": "aaronpk/oauth-client-id-prefix",
+      "baseRefName": "main",
+      "baseRefOid": "1d1f012f19d4e8af431752af93a3bdcc47d1df3a",
+      "headRepository": "aaronpk/oauth-client-id-prefix",
+      "headRefName": "danielfett-remove-extra-colon",
+      "headRefOid": "4e51b4fd89e3fd28ab30d3b6c62e754952c4112b",
+      "closedAt": "2025-07-04T12:32:52Z",
+      "mergedAt": "2025-07-04T12:32:52Z",
+      "mergedBy": "aaronpk",
+      "mergeCommit": {
+        "oid": "485c9cba47449cf0577a0b6dff5c2daef8e564bb"
+      },
       "comments": [],
       "reviews": []
     }
