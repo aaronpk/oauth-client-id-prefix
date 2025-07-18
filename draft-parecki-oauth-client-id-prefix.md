@@ -40,10 +40,6 @@ normative:
   RFC5280:
   RFC7515:
   RFC8414:
-  DID-Core:
-    title: "DID Core"
-    target: https://www.w3.org/TR/did-core/
-    date: 2022-07-19
   OpenID.Federation:
     title: "OpenID Federation 1.0"
     date: 2024-05-17
