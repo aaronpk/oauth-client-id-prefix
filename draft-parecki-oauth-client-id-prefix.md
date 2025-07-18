@@ -206,6 +206,6 @@ The following authorization server metadata value is defined by this specificati
 The authors would like to thank the following people for their contributions and
 reviews of this specification:
 
-Brian Campbell, Emelia Smith.
+Brian Campbell, Emelia Smith, Tim Würtele.
 
 
