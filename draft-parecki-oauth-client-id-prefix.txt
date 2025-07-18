@@ -5,9 +5,9 @@
 Web Authorization Protocol                                    A. Parecki
 Internet-Draft                                                      Okta
 Intended status: Informational                                   D. Fett
-Expires: 5 January 2026                                        J. Heenan
+Expires: 19 January 2026                                       J. Heenan
                                                                 Authlete
-                                                             4 July 2025
+                                                            18 July 2025
 
 
                        OAuth 2.0 Client ID Prefix
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 January 2026.
+   This Internet-Draft will expire on 19 January 2026.
 
 Copyright Notice
 
@@ -294,9 +294,6 @@ GET /authorize?
 8.  References
 
 8.1.  Normative References
-
-   [DID-Core] "DID Core", 19 July 2022,
-              <https://www.w3.org/TR/did-core/>.
 
    [OpenID.Federation]
               Hedberg, R., Jones, M.B., Solberg, A.Å., Bradley, J.,
