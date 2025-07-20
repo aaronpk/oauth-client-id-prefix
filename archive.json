@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-06T02:10:59.669392+00:00",
+  "timestamp": "2025-07-20T02:24:00.536661+00:00",
   "repo": "aaronpk/oauth-client-id-prefix",
   "labels": [
     {
@@ -113,25 +113,33 @@
       "id": "PR_kwDONKxLcc6Kn1QD",
       "title": "Remove reference to \"presentation\"",
       "url": "https://github.com/aaronpk/oauth-client-id-prefix/pull/1",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "SECtim",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-02-10T10:40:26Z",
-      "updatedAt": "2025-02-10T10:40:26Z",
+      "updatedAt": "2025-07-18T23:44:02Z",
       "baseRepository": "aaronpk/oauth-client-id-prefix",
       "baseRefName": "main",
       "baseRefOid": "c67ff9195d179a4dd2d5b692629d93c29730daf0",
       "headRepository": "SECtim/oauth-client-id-scheme",
       "headRefName": "patch-1",
       "headRefOid": "1f63dda3d090bfd41d790b0eb8893d43d93a734d",
-      "closedAt": null,
+      "closedAt": "2025-07-18T23:44:02Z",
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "aaronpk",
+          "authorAssociation": "OWNER",
+          "body": "Thanks, this has been resolved in the current text, and I've added you to the acknowledgments.",
+          "createdAt": "2025-07-18T23:44:02Z",
+          "updatedAt": "2025-07-18T23:44:02Z"
+        }
+      ],
       "reviews": []
     },
     {
@@ -158,6 +166,34 @@
       "mergedBy": "aaronpk",
       "mergeCommit": {
         "oid": "485c9cba47449cf0577a0b6dff5c2daef8e564bb"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDONKxLcc6fpkab",
+      "title": "remove unused reference",
+      "url": "https://github.com/aaronpk/oauth-client-id-prefix/pull/6",
+      "state": "MERGED",
+      "author": "bc-pi",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-07-18T23:32:26Z",
+      "updatedAt": "2025-07-18T23:38:53Z",
+      "baseRepository": "aaronpk/oauth-client-id-prefix",
+      "baseRefName": "main",
+      "baseRefOid": "485c9cba47449cf0577a0b6dff5c2daef8e564bb",
+      "headRepository": "bc-pi/oauth-client-id-prefix",
+      "headRefName": "patch-1",
+      "headRefOid": "bb3e237625d8bf146e671c9abcfbbbddddeb7651",
+      "closedAt": "2025-07-18T23:38:53Z",
+      "mergedAt": "2025-07-18T23:38:53Z",
+      "mergedBy": "aaronpk",
+      "mergeCommit": {
+        "oid": "dcf9c5973eb1ec4187ed2df2c2fe18922befd2ad"
       },
       "comments": [],
       "reviews": []
