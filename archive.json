@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-20T02:24:00.536661+00:00",
+  "timestamp": "2025-07-27T02:25:02.597253+00:00",
   "repo": "aaronpk/oauth-client-id-prefix",
   "labels": [
     {
@@ -105,6 +105,60 @@
           "updatedAt": "2025-07-04T12:20:45Z"
         }
       ]
+    },
+    {
+      "number": 7,
+      "id": "I_kwDONKxLcc7CQsmp",
+      "title": "Redirect paths instead of full URI?",
+      "url": "https://github.com/aaronpk/oauth-client-id-prefix/issues/7",
+      "state": "CLOSED",
+      "author": "arndt-s",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Just listening to Brian talking about this and I've had an idea I didn't want to loose:\n\nInstead of absolute redirect URIs did you consider just allowing the specification of paths? In that case the client-id document cannot allow redirection to other parties but can only allow redirect to the same host. I did not think much about it though, just an idea ..",
+      "createdAt": "2025-07-24T09:18:52Z",
+      "updatedAt": "2025-07-24T09:27:15Z",
+      "closedAt": "2025-07-24T09:27:10Z",
+      "comments": [
+        {
+          "author": "ThisIsMissEm",
+          "authorAssociation": "NONE",
+          "body": "This isn't the repo for Client ID Metadata Documents, which is located here: https://github.com/aaronpk/draft-parecki-oauth-client-id-metadata-document\n\nThere is also discussion on the repository about redirect URIs, and its actually a n important feature in Client ID Metadata Documents that you *can* host the metadata document and the redirect URI at different locations, which enables using Client ID metadata documents by mobile apps and by applications not deployed to the public internet (e.g., staging or test environments)",
+          "createdAt": "2025-07-24T09:25:36Z",
+          "updatedAt": "2025-07-24T09:25:36Z"
+        },
+        {
+          "author": "aaronpk",
+          "authorAssociation": "OWNER",
+          "body": "yep also native apps that use `http://127.0.0.1/redirect` or custom URL schemes",
+          "createdAt": "2025-07-24T09:26:40Z",
+          "updatedAt": "2025-07-24T09:26:40Z"
+        },
+        {
+          "author": "arndt-s",
+          "authorAssociation": "NONE",
+          "body": "Oh sorry, will check the other repo.",
+          "createdAt": "2025-07-24T09:27:10Z",
+          "updatedAt": "2025-07-24T09:27:15Z"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "id": "I_kwDONKxLcc7CQv8u",
+      "title": "IETF-123 / Can we consider `urn:` prefix path as a standard prefix for routing?",
+      "url": "https://github.com/aaronpk/oauth-client-id-prefix/issues/8",
+      "state": "OPEN",
+      "author": "identitymonk",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "This would be the only prefix that would be standardized as part of the spec, forcing anyone wanting to define sub `urn` to register those to IANA",
+      "createdAt": "2025-07-24T09:23:03Z",
+      "updatedAt": "2025-07-24T09:23:03Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
