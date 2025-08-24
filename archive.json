@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-27T02:25:02.597253+00:00",
+  "timestamp": "2025-08-24T02:05:09.802680+00:00",
   "repo": "aaronpk/oauth-client-id-prefix",
   "labels": [
     {
@@ -62,9 +62,17 @@
       "labels": [],
       "body": "Should there be dedicated errors codes?\n- `client_id_prefix_unsupported`\n- `client_id_prefix_required`\n- `invalid_client_id`",
       "createdAt": "2025-06-18T08:19:49Z",
-      "updatedAt": "2025-06-18T08:21:57Z",
+      "updatedAt": "2025-08-22T21:45:00Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "jaredhanson",
+          "authorAssociation": "NONE",
+          "body": "I'd also like to see specific error codes.  I'd advocate for `unsupported_client_id_prefix` (which matches the idioms of other OAuth error codes) as well as `invalid_client_id` and `client_id_prefix_required`.",
+          "createdAt": "2025-08-22T21:45:00Z",
+          "updatedAt": "2025-08-22T21:45:00Z"
+        }
+      ]
     },
     {
       "number": 3,
